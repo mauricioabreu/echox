@@ -101,7 +101,7 @@ func TestCreateUser(t *testing.T) {
 	// Assertions
 	if assert.NoError(t, h.createUser(c)) {
 		assert.Equal(t, http.StatusCreated, rec.Code)
-		assert.Equal(t, userJSON, rec.Body.String())
+		assert.JSONEq(t, userJSON, rec.Body.String())
 	}
 }
 
